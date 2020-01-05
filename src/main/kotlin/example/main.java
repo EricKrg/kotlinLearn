@@ -45,13 +45,9 @@ public class main {
         return one + two;
     }
 
-    public static void stringAction(String input) {
-        System.out.println(input.toUpperCase());
-    }
     // lambda
     public static void aCoolLambda(String input, Function<String, Integer> action) {
         System.out.println(action.apply(input));
     }
-
 
 }
