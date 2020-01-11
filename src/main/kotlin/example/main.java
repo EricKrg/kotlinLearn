@@ -50,4 +50,7 @@ public class main {
         System.out.println(action.apply(input));
     }
 
+    // ternary
+    String name = "Eric";
+    String con = "Eric".equals(name) ? "y" : "n";
 }

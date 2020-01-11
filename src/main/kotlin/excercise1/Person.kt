@@ -2,11 +2,11 @@ package excercise1
 
 import java.util.*
 
-data class Person(private val id: Long,
-                  private val title: String,
-                  private val firstName: String,
-                  private val surname: String,
-                  private val dateOfBirth: Calendar?) {
+data class Person(val id: Long,
+                  val title: String,
+                  val firstName: String,
+                  val surname: String,
+                  val dateOfBirth: Calendar?) {
 
     override fun toString(): String = "$title $firstName $surname"
 
@@ -42,8 +42,8 @@ fun main() {
     val person = Person(1L, "Dr", "Jo", "Bo", GregorianCalendar(2010,9,3))
     val person2 = Person(2L, "Dr", "Jo", "Bo", null)
     println(person)
-    println(person.equals(null))
-    println(person.equals(person2))
+    println(person == null)
+    println(person == person2)
     println(person.getAge())
     println(person2.getAge())
 }
