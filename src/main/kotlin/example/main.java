@@ -1,7 +1,6 @@
 package example;
 
-import com.sun.beans.editors.DoubleEditor;
-
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.Random;
 import java.util.function.Function;
@@ -34,6 +33,8 @@ public class main {
         System.out.println(result);
         addNum(1.0);
         aCoolLambda("1", Integer::parseInt);
+
+        test();
     }
 
     // overloaded
@@ -53,4 +54,32 @@ public class main {
     // ternary
     String name = "Eric";
     String con = "Eric".equals(name) ? "y" : "n";
+    //  try catch file open
+    public void openAFile() { // could also throw these ex.
+        // file open
+        FileReader fr = null;
+        BufferedReader br = null;
+        try {
+            fr = new FileReader("test.txt");
+            br = new BufferedReader(fr);
+        } catch( FileNotFoundException eFile) {
+            System.out.println("File not found");
+        } finally {
+            try {
+                br.close();
+                fr.close();
+            } catch (IOException | NullPointerException eIO) {
+                System.out.println("Could not close");
+            }
+        }
+    }
+
+    public static void test() {
+        Double myDouble = 123.456;
+        System.out.println(myDouble.toString().split("\\.")[1].length());
+        String doubleNum = "123.0455";
+        int splitted = doubleNum.split("\\.")[1].length();
+        System.out.println(splitted);
+    }
+
 }

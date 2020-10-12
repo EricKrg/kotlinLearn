@@ -15,8 +15,8 @@ class Customer {
 // kotlin shorthand with default constructor
 // getter and Setters not needed
 class CustomerKotlin(val name: String,
-                     var address: String,
-                     var age: Int) {
+                     private var address: String,
+                     private var age: Int) {
     //secondary constructor
     constructor(name: String, age: Int): this(name,"",age) {
 

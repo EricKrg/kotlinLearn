@@ -28,7 +28,7 @@ fun main() {
 
     // arrays alwasy mutable and fixed size
     val intArray: IntArray = intArrayOf(1,2,3,4,5)
-    intArray.set(1,895) // or
+    intArray[1] = 895 // or
     intArray[3] = 44
     intArray.forEach { println(it) }
 }
